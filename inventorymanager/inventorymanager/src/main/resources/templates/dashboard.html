@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>InventAuto</title>
+    <link rel="stylesheet" href="/css/styledash.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-darkgreen">
+        <a class="navbar-brand" href="#">
+            <img src="/images/leaf-logo.png" alt="InventAuto Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <form th:action="@{/logout}" method="post" style="display: inline;">
+                        <button type="submit" style="background: none; border: none; cursor: pointer; padding: 0; margin: 0;">
+                            <img src="/images/cerrar-sesion.png" alt="Logout" style="height: 24px;">
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="text-center text-darkgreen">InventAuto</h1>
+        <div class="text-right mb-3">
+            <a th:href="@{/new}" class="btn btn-success">Nuevo</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-darkgray">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Ubicación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="invent:${inventoryItems}">
+                        <td th:text="${invent.id}"></td>
+                        <td th:text="${invent.name}"></td>
+                        <td th:text="${invent.description}"></td>
+                        <td th:text="${invent.cantidad}"></td>
+                        <td th:text="${invent.precio}"></td>
+                        <td th:text="${invent.ubicacion}"></td>
+                        <td>
+                             <a th:href="@{/editar/}+${invent.id}" class="btn btn-warning">Editar</a>
+                        <a th:href="@{/eliminar/}+${invent.id}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="about" class="container mt-4 about-section">
+        <h2 class="text-center text-darkgreen">Sobre Nosotros</h2>
+        <p>InventAuto es una empresa líder en la gestión de inventarios ubicada en Colombia. Nos dedicamos a proporcionar soluciones innovadoras para la administración eficiente de inventarios, ayudando a nuestros clientes a optimizar sus operaciones y maximizar su productividad.</p>
+    </div>
+</body>
+</html>
+

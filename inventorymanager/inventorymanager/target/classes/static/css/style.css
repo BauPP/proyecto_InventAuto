@@ -1,0 +1,163 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(128, 128, 128); /* Cambia el color de fondo a gris */
+    color: #333;
+}
+
+.login-container, .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    background: #fff; /* Cambia el color de fondo a blanco */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.login-content, .register-content {
+    display: flex;
+    width: 100%;
+}
+
+.login-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* Cambia el color de fondo a blanco */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.login-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+.register-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* Cambia el color de fondo a blanco */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+}
+
+.register-image img {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    height: 100%; /* Ajusta la altura al 100% del contenedor */
+    object-fit: cover; /* Ajusta el tamaño del contenido para cubrir el contenedor */
+}
+
+/* Estilos para las imágenes de usuario, correo y bloquear */
+.icon img {
+    max-width: 24px; /* Ajusta el tamaño máximo */
+    height: auto;
+}
+
+.login-form, .register-form {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-form h1, .register-form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.register-link {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-style: italic; /* Estilo de letra en cursiva */
+}
+
+.register-link a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+    font-weight: bold; /* Hace que el texto sea más audaz */
+}
+
+.register-login-link {
+    text-align: right;
+    margin-top: 10px; /* Aumenta el espacio hacia arriba */
+    margin-bottom: 20px;
+}
+
+.register-login-link a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-style: italic; /* Estilo de letra en cursiva */
+}
+
+.register-login-link a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+    font-weight: bold; /* Hace que el texto sea más audaz */
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background: #4caf50;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>InventAuto</title>
+	<link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>InventAuto</h1>
+        <div class="col-sm-6">
+            <form th:action="@{/save}" th:object="${persona}" method="post">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Modulo Objeto</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input th:field="*{id}" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input th:field="*{name}" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <input th:field="*{description}" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Cantidad</label>
+                            <input th:field="*{cantidad}" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Precio</label>
+                            <input th:field="*{precio}" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Ubicación</label>
+                            <input th:field="*{ubicacion}" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <input type="submit" value="Guardar" class="btn btn-success">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

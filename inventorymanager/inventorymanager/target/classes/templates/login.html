@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-content">
+            <div class="login-image">
+                <img src="/images/leaf-logo.png" alt="Logo">
+            </div>
+            <div class="login-form">
+                <h1>Bienvenido!</h1>
+                <form action="/login" method="post">
+                    <div class="input-group">
+                        <label for="username" class="icon"><img src="/images/usuario-de-perfil.png" alt="User Icon"></label>
+                        <input type="text" id="username" name="username" placeholder="Usuario" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password" class="icon"><img src="/images/bloquear.png" alt="Password Icon"></label>
+                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    </div>
+                    <div class="register-link">
+                        <p>No tienes una cuenta? <a href="/register">Regístrate aquí</a></p>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
